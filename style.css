@@ -1,0 +1,180 @@
+/* Import google fonts*/
+@import url("https://fonts.googleapis.com/css?family=Lato:100,400&display=swap");
+
+/* Short CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 0;
+}
+
+body {
+    width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+    background: #E0E0E0;
+
+    /* Set up grid and grid template areas */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 2fr 1fr auto;
+    grid-template-areas: "header" "main" "aside" "footer";
+    gap: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        grid-template-areas: "header header header header" "main main main aside"  "footer footer footer footer";
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+/* Header */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #FFF;
+    margin-bottom: 1rem;
+}
+
+header {
+    grid-area: header;
+    background-color: steelblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li:not(:last-child) {
+    padding-right: 1em;
+}
+
+nav a {
+    color: #FFF;
+}
+
+nav a:hover,
+nav a:focus {
+    color: red;
+}
+
+@media screen and (min-width: 800px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: ba;
+    }
+}
+
+/* Main */
+
+main {
+    grid-area: main;
+}
+
+main picture {
+    float: left;
+    padding-right: 1em;
+    shape-outside: circle(50%);
+}
+
+main img {
+    max-width: 225px;
+    border-radius: 50%;
+}
+
+/* Aside */
+
+aside {
+    grid-area: aside;
+    background-color: darkgrey;
+    padding: .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    background: lightgray;
+}
+
+.card h1 {
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    aside {
+        flex-direction: column;
+    }
+
+    aside .card {
+        flex-basis: auto;
+    }
+
+    aside .card:not(:last-child) {
+        margin-bottom: .5em;
+    }
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 2px solid steelblue;
+}
+
+.copy {
+  margin-bottom: .5rem;
+}
+
+svg {
+  width: 30px;
+margin-right: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8em;
+    text-align: left;
+    }
+
+    .copy {
+      margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
